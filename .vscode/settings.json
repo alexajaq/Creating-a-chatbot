@@ -21,6 +21,7 @@
     },
     "peacock.color": "#7ca547",
     "python.pythonPath": "C:\\dev\\home\\workbench\\env\\Scripts\\python.exe",
+    "python.linting.enabled": true,
     "python.linting.mypyEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.flake8Enabled": true
 }
