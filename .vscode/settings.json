@@ -23,5 +23,19 @@
     "python.pythonPath": "C:\\dev\\home\\workbench\\env\\Scripts\\python.exe",
     "python.linting.enabled": true,
     "python.linting.mypyEnabled": true,
-    "python.linting.flake8Enabled": true
+    "python.linting.flake8Enabled": true,
+    "mypy.configFile": "mypy.ini",
+    "mypy.targets": [
+        "src"
+    ],
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": true
 }

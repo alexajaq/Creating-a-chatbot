@@ -1,5 +1,5 @@
 import json
-from typing import Any, Dict
+from typing import Any
 
 
 def give_user_the_third_degree() -> dict[str, Any]:
@@ -7,30 +7,29 @@ def give_user_the_third_degree() -> dict[str, Any]:
     my_name: str = input()
 
     print("Nice to meet you " + my_name + "!")
-
     thank_you = input()
-    print("What is your favorite food, " + my_name + "?")
 
+    print("What is your favorite food, " + my_name + "?")
     favorite_food: str = input()
     print("Ah, your favorite food is " + favorite_food + ", mine too!")
 
-    tell_story: bool = False
+    res: str
     while (res := input("Do you want to hear a story? (Enter y/n)").lower()) not in {"y", "n"}:
         pass
 
-    if res == 'y':
-        tell_story = True
+    tell_story: bool = res == 'y'
 
     if tell_story:
         print("""
             There was once a goddess birthed from a volcano.
             She travelled far and wide, she even met death.
             Eventually, she went back to the volcano,
-            believing herself to be enough company.""")
+            believing herself to be enough company.
+            """)
     else:
         print("Maybe next time then. Thank you.")
 
-    summary: Dict[str, Any] = {
+    summary: dict[str, Any] = {
         'name': my_name,
         'food': favorite_food,
         'story_told': tell_story,
@@ -40,5 +39,5 @@ def give_user_the_third_degree() -> dict[str, Any]:
 
 
 if __name__ == "__main__":
-    result: Dict[str, Any] = give_user_the_third_degree()
+    result: dict[str, Any] = give_user_the_third_degree()
     print(f'User Summary: {json.dumps(result)}')
