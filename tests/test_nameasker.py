@@ -1,3 +1,4 @@
+from typing import Any, Dict, List
 import unittest
 from unittest.mock import patch
 from src.nameasker import give_user_the_third_degree
@@ -15,7 +16,7 @@ class TestNameAsker(unittest.TestCase):
 
         # arrange
         # we define our own typed responses and send them to input() in order
-        inputs: list[str] = [
+        inputs: List[str] = [
             'test_bot',
             'likewise',
             'bits and bytes every morning',
@@ -23,7 +24,7 @@ class TestNameAsker(unittest.TestCase):
         ]
 
         # the activity summary returned by the function
-        expected_result: dict[str, any] = {
+        expected_result: Dict[str, Any] = {
             'name': inputs[0],
             'food': inputs[2],
             'story_told': True
@@ -31,7 +32,7 @@ class TestNameAsker(unittest.TestCase):
 
         # act
         with patch('builtins.input', side_effect=inputs):
-            result: dict[str, any] = give_user_the_third_degree()
+            result: Dict[str, Any] = give_user_the_third_degree()
 
         # assert
         # here we compare the returned value with what we expected
